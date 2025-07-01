@@ -9,6 +9,7 @@ const { Panel } = Collapse;
 const Exchanges = () => {
   const { data, isFetching } = useGetExchangesQuery();
   const exchangesList = data?.data?.exchanges;
+  console.log(data)
 
   if (isFetching) return "Loading...";
   return (
@@ -20,7 +21,8 @@ const Exchanges = () => {
         <Col span={6}>Change</Col>
       </Row>
       <Row>
-        {exchangesList.map((exchange) => (
+        {!exchangesList ? (<h1 className="price-change" style={{"display":"flex", "height":"80vh", "justify-content":"center", "width": "100vw"  ,"alignItems":"center"}}>no exchange is found</h1>):(
+          exchangesList.map((exchange) => (
           <Col span={24}>
             <Collapse>
               <Panel
@@ -50,7 +52,8 @@ const Exchanges = () => {
               </Panel>
             </Collapse>
           </Col>
-        ))}
+        ))
+        )}
       </Row>
     </>
   );
