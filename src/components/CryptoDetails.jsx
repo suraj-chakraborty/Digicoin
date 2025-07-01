@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom";
 // import millify from "millify";
@@ -27,7 +27,7 @@ const { Option } = Select;
 
 const CryptoDetails = () => {
   const { uuid } = useParams();
-  const [timeperiod, setTimeperiod] = useState("24h");
+  // const [timeperiod, setTimeperiod] = useState("24h");
   const { data, isFetching } = useGetCryptoDetailsQuery(uuid);
   const { data: coinHistory } = useGetCryptoHistoryQuery({
     uuid,
@@ -120,7 +120,7 @@ const CryptoDetails = () => {
         defaultValue="24h"
         className="select-timeperiod"
         placeholder="Select Timeperiod"
-        onChange={(value) => setTimeperiod(value)}
+        // onChange={(value) => setTimeperiod(value)}
       >
         {time.map((date) => (
           <Option key={date}>{date}</Option>
