@@ -55,15 +55,15 @@ const Homepage = () => {
         </Title>
       </div>
       <Cryptocurrencies simplified />
-      <div className="home-heading-container">
-        <Title level={2} className="home-title">
+      {/* <div className="home-heading-container"> */}
+        {/* <Title level={2} className="home-title">
           Latest Cryptocurrency News
         </Title>
         <Title level={2} className="show-more">
           <Link to="/news">Show More</Link>
         </Title>
       </div>
-      <News simplified />
+      <News simplified /> */}
     </>
   );
 };

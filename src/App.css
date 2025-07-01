@@ -339,7 +339,14 @@ width: 70%;
     color: var(--text-secondary) !important;
     font-size: 18px;
     text-align: center;
+    cursor: pointer;
     row-gap: 6px;
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 .ant-collapse-header{
     background-color: var(--light-blue);

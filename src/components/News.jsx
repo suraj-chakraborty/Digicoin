@@ -19,7 +19,7 @@ const News = ({ simplified }) => {
   });
   const { data } = useGetCryptosQuery(200);
 
-  if (!cryptoNews?.value) return "Loading...";
+  if (!cryptoNews?.value) return <h1 className="<h1 cprice-change" style={{"display":"flex", "height":"80vh", "justify-content":"center", "width": "100vw"  ,"alignItems":"center"}}> News not found</h1>
 
   return (
     <Row gutter={[24, 24]}>
