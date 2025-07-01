@@ -1,10 +1,14 @@
 :root{
+    --text-secondary:#fff;
     --text-primary:#000;
     --bgPrimary:#fff;
    --bgSecondary: #f2e4fe;
-   --pink: #5cbeff;
-   --light-blue: #e6f7ff;
+   --pink: #0B0F2B;
+   --light-blue:  #12183C;
    --border: #d9d9d9;
+   --card: linear-gradient(to right, #8dbee1, #bff4ff);
+   --card2: linear-gradient(150deg, #022674, #0f2f7b, #173d8c);
+
 }
 
 * {
@@ -20,11 +24,12 @@ a:hover{
 .app{
     display: flex;
     overflow: hidden;
+    background-color: var(--card2)
 }
 
 .navbar{
     flex: 0.2;
-    background-color: rgb(105, 182, 255);
+    background-color: var(--pink);
 }
 
 .main{
@@ -41,11 +46,11 @@ a:hover{
     margin: 10px;
     height: 100vh;
     margin: 0px;
-    background-color: rgb(105, 182, 255);
+    background-color: var(--pink);
 }
 
 .logo-container{
-    background-color: rgb(105, 182, 255);
+    background-color:var(--pink);
     display: flex;
     padding: 20px;
     align-items: center;
@@ -106,7 +111,7 @@ a:hover{
         position:fixed;
         width: 100%;
         z-index: 100;
-        background-color: rgb(105, 182, 255);
+        background-color: var(--pink);
     }
   
     .menu-control-container{
@@ -143,12 +148,14 @@ a:hover{
 .coin-heading-container .coin-name{
     font-weight: 900;
     color: var(--bgSecondary);
+    font-size : 2rem;
+    border-bottom: 1px solid var(--border);
 }
 
 .coin-heading-container p{
     font-size: 1rem;
     opacity: 0.9;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 .ant-typography > strong {
     text-align: left !important;
@@ -160,11 +167,12 @@ a.ant-typography, .ant-typography a{
 }
 
 h2.ant-typography, .ant-typography h2{
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .ant-row .ant-typography {
  text-align: left !important;
+ color: var(--text-secondary) !important
 }
 
 .stats-container{
@@ -304,7 +312,7 @@ h2.ant-typography, .ant-typography h2{
 .news-image-container{
     display: flex !important;
     justify-content: space-between !important;
-    background-color:  #c8e5f9 !important;
+    background-color:  var(--bgPrimary) !important;
 }
 .news-title{
 width: 70%;
@@ -317,30 +325,55 @@ width: 70%;
 }
 
 .ant-card-body {
-    background-color: rgba(152, 211, 252, 0.798);
+    background-image: var(--card2);
+    border-radius:10px;
+    color: var(--text-secondary);
 }
-
+.ant-card-body > p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.5;
+}
 .ant-row{
-    background-color: rgb(31, 147, 255);
-    color: white;
+    background-color: var(--pink);
+    color: var(--text-secondary) !important;
     font-size: 18px;
     text-align: center;
     row-gap: 6px;
 }
 .ant-collapse-header{
-    background-color: rgb(3, 129, 255);
+    background-color: var(--light-blue);
 }
 .ant-card{
     font-size: 18px !important;
     font-weight: 700 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
 }
 .ant-card-head{
-  background: #0091ffc4 !important;
-  color: #e6f7ff !important;
+  background: var(--card) !important;
+  border-radius: 10px !important;
+  color: #09445f !important;
+  font-size: 2rem;
+  font-weight: 800;
 }
-.routes{
-    background-color: rgb(183 201 219);
+.routes {
+    background: linear-gradient(to top, #102050, #1C2C5A);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: var(--text-secondary);
 }
+
+canvas {
+    background: linear-gradient(to top, #102050, #1C2C5A);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.routes, canvas {
+    transition: all 0.3s ease-in-out;
+}
+
 .news-card p{
     color: black;
     margin: 10px 0px !important;
@@ -355,25 +388,34 @@ width: 70%;
 
 .chart-header{
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-evenly;
     gap: 50px;
-    color: #fff;
+    background-color: linear-gradient(to top, #102050  #1C2C5A);
+    color: var(--light-blue);
+    border-radius: 4px;
+    padding: 5px;
 }
 .ant-typography{
-    color: #fff;
+    color: var(--text-secondary);
 }
 .chart-title{
-    color: #b5d0ff !important;
+    color: #f6f7fa !important;
 }
 
 .price-container{
     display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     gap: 20px !important;
     align-items: center !important;
     flex-wrap: wrap !important;
 }
 .price-change{
+    margin-top: 0px !important;
     font-weight: 900 !important;
+    margin-bottom: 0;
+    color: #fff !important;
 }
 .current-price{
     margin-top: 0px !important;
@@ -384,6 +426,7 @@ width: 70%;
     justify-content: space-between;
     align-items: center;
     margin-top: 40px;
+    color: var(--text-secondary);
 }
 .show-more{
     margin-top: 0px !important;
@@ -393,13 +436,17 @@ width: 70%;
 }
 .search-crypto{
     margin: 20px auto 30px auto;
-    width: 250px;
+    width: 100%;
+    border-radius: 30px;
+    padding: 10px;
 }
 .crypto-card-container{
     min-height: 65vh !important;
+    border-radius:10px !important
 }
 .crypto-card{
     min-width: 250px;
+    padding: 20px;
 }
 .crypto-card .crypto-image{
     width:35px;
@@ -422,21 +469,54 @@ width: 70%;
     margin: 0;
     padding: 0;
     font-variant: petite-caps !important;
+    height: 100vh;
     line-height: 1.5715;
     font-feature-settings: 'tnum', "tnum";
-    margin-bottom: 2em !important;
+    /* margin-bottom: 2em !important; */
     padding-left: 1em !important;
-    color: rgba(0, 0, 0, 0.85);
+    color: var(--text-secondary) !important;
+    font-variant: initial;
+    
     font-size: 18px !important;
     font-weight: 700 !important;
     line-height: 100px !important;
     text-align: left;
     list-style: circle;
-    background: #fff;
+    background: var(--pink) !important;
     outline: none;
     box-shadow: 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%) !important;
 }
 .ant-menu-submenu-title {
     height: 86px !important;
     line-height: 82px !important;
+    color: var(--text-secondary) !important;
+    font-size: 18px !important;
+}
+
+.ant-menu-item a{
+    color: var(--text-secondary) !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+}
+
+.ant-input {
+    width: 100% !important;
+    height: 40px !important;
+    border-radius: 20px !important;
+    padding: 0 20px !important;
+    font-size: 16px !important;
+    border: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+h2.ant-typography, .ant-typography h2{
+    color: var(--text-secondary) !important;
+}
+
+.ant-statistic-content, .ant-statistic-title {
+    color: var(--text-secondary) !important;
+    font-size: larger;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+
 }
